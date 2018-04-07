@@ -1,20 +1,3 @@
- -------------------------------------------------------------------------------
- -- Title : NTP client
- -- Project : 
- -------------------------------------------------------------------------------
- -- File : arp_decoder.vhd
- -- Author : Filip Ozimek
- -- Created : 2018/04/07
- -- Last modified : 2018/04/07
- -------------------------------------------------------------------------------
- -- Description:
- --
- -- 
- -------------------------------------------------------------------------------
- -- Modification history:
- -- 2018/04/07 : created
- -------------------------------------------------------------------------------
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.NUMERIC_STD.all;
@@ -54,7 +37,7 @@ ARCHITECTURE rtl OF arp_decoder IS
 signal byte_counter : integer range 0 to 2047;
 type t_ST is (ST_IDLE, ST_READ, ST_ARP, ST_FLUSH, ST_ANNO);
 signal ST : t_ST := ST_IDLE;
-signal arp_packet : t_arr_byte(0 to 41);
+signal arp_packet : t_arr_byte(0 to 59);
 signal send_arp_resp : std_logic := '0';
 
 
@@ -120,6 +103,27 @@ arp_packet(31) <= unsigned ( local_ip_i(7 downto 0) );
 --arp_packet(39) <= x"00";
 --arp_packet(40) <= x"00";
 --arp_packet(41) <= x"00";
+
+arp_packet(42) <= x"00";
+arp_packet(43) <= x"00";
+arp_packet(44) <= x"00";
+arp_packet(45) <= x"00";
+arp_packet(46) <= x"00";
+arp_packet(47) <= x"00";
+arp_packet(48) <= x"00";
+arp_packet(49) <= x"00";
+arp_packet(50) <= x"00";
+arp_packet(51) <= x"00";
+arp_packet(52) <= x"00";
+arp_packet(53) <= x"00";
+arp_packet(54) <= x"00";
+arp_packet(55) <= x"00";
+arp_packet(56) <= x"00";
+arp_packet(57) <= x"00";
+arp_packet(58) <= x"00";
+arp_packet(59) <= x"00";
+
+
 
 
 decode_packet : process(clock_i,reset_n)
@@ -340,7 +344,7 @@ send_arp_pckt: process(clock_i,reset_n)
 					-- 	M_AXIS_TLAST_o <= '1';
 					-- end if;
 
-					if (data_counter=42) then
+					if (data_counter=60) then
 						M_AXIS_TDATA_o <= (others => '0');
 						M_AXIS_TLAST_o <= '0';
 						data_counter <= 0;
@@ -348,7 +352,7 @@ send_arp_pckt: process(clock_i,reset_n)
 						req_o <= '0';
 						mst_exec_state <= IDLE;
 
-					elsif (data_counter=41) then
+					elsif (data_counter=59) then
                         M_AXIS_TLAST_o <= '1';
                         M_AXIS_TDATA_o <= std_logic_vector(arp_packet(data_counter));
                         data_counter <= data_counter + 1;
