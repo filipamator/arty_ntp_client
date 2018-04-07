@@ -11,6 +11,5 @@ Used IP cores/VHDL code:
 - AXI4-Stream switchboard from Xilinx
 - Code for Ethernet CRC32 calculation and 7seg dispplay: Mike Field  (http://hamsterworks.co.nz/)
 - UART implementation: https://www.nandland.com/vhdl/modules/module-uart-serial-port-rs232.html
-<br><br>
 
  ![alt text](https://github.com/filipamator/arty_ntp_client/blob/master/doc/diagram.PNG?raw=true)
