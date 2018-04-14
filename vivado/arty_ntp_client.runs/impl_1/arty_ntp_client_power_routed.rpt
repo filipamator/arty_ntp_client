@@ -1,0 +1,243 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date             : Sat Apr 14 14:14:33 2018
+| Host             : PONIAK running 64-bit major release  (build 9200)
+| Command          : report_power -file arty_ntp_client_power_routed.rpt -pb arty_ntp_client_power_summary_routed.pb -rpx arty_ntp_client_power_routed.rpx
+| Design           : arty_ntp_client
+| Device           : xc7a35ticsg324-1L
+| Design State     : routed
+| Grade            : industrial
+| Process          : typical
+| Characterization : Preliminary
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.086        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.024        |
+| Device Static (W)        | 0.062        |
+| Effective TJA (C/W)      | 4.8          |
+| Max Ambient (C)          | 99.6         |
+| Junction Temperature (C) | 25.4         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.004 |        9 |       --- |             --- |
+| Slice Logic             |     0.005 |     4943 |       --- |             --- |
+|   LUT as Logic          |     0.005 |     2250 |     20800 |           10.82 |
+|   CARRY4                |    <0.001 |      336 |      8150 |            4.12 |
+|   Register              |    <0.001 |     1747 |     41600 |            4.20 |
+|   F7/F8 Muxes           |    <0.001 |       36 |     32600 |            0.11 |
+|   LUT as Shift Register |    <0.001 |       19 |      9600 |            0.20 |
+|   Others                |     0.000 |       77 |       --- |             --- |
+| Signals                 |     0.004 |     3704 |       --- |             --- |
+| Block RAM               |     0.002 |        3 |        50 |            6.00 |
+| PLL                     |     0.000 |        1 |         5 |           20.00 |
+| I/O                     |     0.008 |       33 |       210 |           15.71 |
+| Static Power            |     0.062 |          |           |                 |
+| Total                   |     0.086 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       0.950 |     0.023 |       0.017 |      0.006 |
+| Vccaux    |       1.800 |     0.012 |       0.000 |      0.011 |
+| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       0.950 |     0.000 |       0.000 |      0.000 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.018 |       0.000 |      0.018 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                               | Action                                                                                                     |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                      |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                |                                                                                                            |
+| I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | Medium     | Device models are not Production                      | Device models may change and in turn slightly affect accuracy                                              |
+|                             |            |                                                       |                                                                                                            |
+| Overall confidence level    | Medium     |                                                       |                                                                                                            |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 4.8                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++--------------------+--------------------------------------+-----------------+
+| Clock              | Domain                               | Constraint (ns) |
++--------------------+--------------------------------------+-----------------+
+| clk_out1_clk_wiz_0 | clk_wiz_0_i1/inst/clk_out1_clk_wiz_0 |            40.0 |
+| clk_out2_clk_wiz_0 | clk_wiz_0_i1/inst/clk_out2_clk_wiz_0 |            20.0 |
+| clkfbout_clk_wiz_0 | clk_wiz_0_i1/inst/clkfbout_clk_wiz_0 |            10.0 |
+| eth_rx_clk         | eth_rx_clk                           |            40.0 |
+| eth_tx_clk         | eth_tx_clk                           |            40.0 |
+| sys_clk_pin        | CLK100MHZ                            |            10.0 |
+| sys_clk_pin        | CLK100MHZ_IBUF_BUFG                  |            10.0 |
++--------------------+--------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++---------------------------------------------------------------------------+-----------+
+| Name                                                                      | Power (W) |
++---------------------------------------------------------------------------+-----------+
+| arty_ntp_client                                                           |     0.024 |
+|   arp_decoder_i1                                                          |    <0.001 |
+|   axis_arbiter_i1                                                         |    <0.001 |
+|   axis_eth_i1                                                             |     0.001 |
+|     fifo_2048x9_i1                                                        |    <0.001 |
+|       U0                                                                  |    <0.001 |
+|         inst_fifo_gen                                                     |    <0.001 |
+|           gconvfifo.rf                                                    |    <0.001 |
+|             gbi.bi                                                        |    <0.001 |
+|               g7ser_birst.rstbt                                           |    <0.001 |
+|               v7_bi_fifo.fblk                                             |    <0.001 |
+|                 gextw[1].gnll_fifo.inst_extd                              |    <0.001 |
+|                   gonep.inst_prim                                         |    <0.001 |
+|     i_add_crc32                                                           |    <0.001 |
+|     i_add_preamble                                                        |    <0.001 |
+|   axis_ntp_i1                                                             |     0.001 |
+|   axis_switch_0_i1                                                        |    <0.001 |
+|     inst                                                                  |    <0.001 |
+|       gen_decoder[0].axisc_decoder_0                                      |    <0.001 |
+|       gen_decoder[1].axisc_decoder_0                                      |    <0.001 |
+|       gen_int_arbiter.gen_arbiter.axis_switch_v1_1_15_axis_switch_arbiter |    <0.001 |
+|         gen_mi_arb[0].gen_arb_algorithm.gen_fixed_priority.inst_arb_rr_1  |    <0.001 |
+|       gen_transfer_mux[0].axisc_transfer_mux_0                            |    <0.001 |
+|         gen_tdest_router.axisc_arb_responder                              |    <0.001 |
+|   clk_wiz_0_i1                                                            |    <0.001 |
+|     inst                                                                  |    <0.001 |
+|   display_top_i1                                                          |    <0.001 |
+|     Inst_dx_display                                                       |    <0.001 |
+|     Inst_dx_display_xmit                                                  |    <0.001 |
+|   ipv4_decoder_i1                                                         |    <0.001 |
+|   main_clock_i1                                                           |     0.005 |
+|   ntp_client_i1                                                           |    <0.001 |
+|   packet_decoder_i1                                                       |     0.001 |
+|     fifo_2048x9_dv_i1                                                     |    <0.001 |
+|       U0                                                                  |    <0.001 |
+|         inst_fifo_gen                                                     |    <0.001 |
+|           gconvfifo.rf                                                    |    <0.001 |
+|             gbi.bi                                                        |    <0.001 |
+|               g7ser_birst.rstbt                                           |    <0.001 |
+|               v7_bi_fifo.fblk                                             |    <0.001 |
+|                 gextw[1].gnll_fifo.inst_extd                              |    <0.001 |
+|                   gonep.inst_prim                                         |    <0.001 |
+|   resetgen_i1                                                             |    <0.001 |
+|   uart_mux_i1                                                             |    <0.001 |
+|   uartdump_i1                                                             |    <0.001 |
+|     UART_TX_i1                                                            |    <0.001 |
+|     fifo_2048x8_i1                                                        |    <0.001 |
+|       U0                                                                  |    <0.001 |
+|         inst_fifo_gen                                                     |    <0.001 |
+|           gconvfifo.rf                                                    |    <0.001 |
+|             gbi.bi                                                        |    <0.001 |
+|               g7ser_birst.rstbt                                           |    <0.001 |
+|               v7_bi_fifo.fblk                                             |    <0.001 |
+|                 gextw[1].gnll_fifo.inst_extd                              |    <0.001 |
+|                   gonep.inst_prim                                         |    <0.001 |
+|   uartdump_i2                                                             |    <0.001 |
+|     UART_TX_i1                                                            |    <0.001 |
+|     fifo_2048x8_i1                                                        |    <0.001 |
+|       U0                                                                  |    <0.001 |
+|         inst_fifo_gen                                                     |    <0.001 |
+|           gconvfifo.rf                                                    |    <0.001 |
+|             gbi.bi                                                        |    <0.001 |
+|               g7ser_birst.rstbt                                           |    <0.001 |
+|               v7_bi_fifo.fblk                                             |    <0.001 |
+|                 gextw[1].gnll_fifo.inst_extd                              |    <0.001 |
+|                   gonep.inst_prim                                         |    <0.001 |
+|   uartdump_i3                                                             |    <0.001 |
+|     UART_TX_i1                                                            |    <0.001 |
+|     fifo_2048x8_i1                                                        |    <0.001 |
+|       U0                                                                  |    <0.001 |
+|         inst_fifo_gen                                                     |    <0.001 |
+|           gconvfifo.rf                                                    |    <0.001 |
+|             gbi.bi                                                        |    <0.001 |
+|               g7ser_birst.rstbt                                           |    <0.001 |
+|               v7_bi_fifo.fblk                                             |    <0.001 |
+|                 gextw[1].gnll_fifo.inst_extd                              |    <0.001 |
+|                   gonep.inst_prim                                         |    <0.001 |
+|   uartdump_i4                                                             |    <0.001 |
+|     UART_TX_i1                                                            |    <0.001 |
+|     fifo_2048x8_i1                                                        |    <0.001 |
+|       U0                                                                  |    <0.001 |
+|         inst_fifo_gen                                                     |    <0.001 |
+|           gconvfifo.rf                                                    |    <0.001 |
+|             gbi.bi                                                        |    <0.001 |
+|               g7ser_birst.rstbt                                           |    <0.001 |
+|               v7_bi_fifo.fblk                                             |    <0.001 |
+|                 gextw[1].gnll_fifo.inst_extd                              |    <0.001 |
+|                   gonep.inst_prim                                         |    <0.001 |
++---------------------------------------------------------------------------+-----------+
+
+
