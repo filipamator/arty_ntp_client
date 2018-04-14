@@ -17,6 +17,17 @@ Used IP cores/VHDL code:
 - Code for Ethernet CRC32 calculation and 7seg dispplay: Mike Field  (http://hamsterworks.co.nz/)
 - UART implementation: https://www.nandland.com/vhdl/modules/module-uart-serial-port-rs232.html
 <br><br>
+Display-board interface:
+- VCC <-> PMOD JA PIN 6
+- GND <-> PMOD JA PIN 5
+- DIO <-> PIN A11 (PMOD JA3)
+- CLK <-> PIN G13 (PMOD JA1)
+- STB0 <-> PIN B11 (PMOD JA2)
+<br>
+The board must be powered by external power supply.
+<br>
+<br>
+
 
 
 Click here to see it in action (https://www.youtube.com/watch?v=EOFJBEK76HQ): 
